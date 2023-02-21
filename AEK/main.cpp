@@ -5,9 +5,9 @@ int main() {
 #ifdef ARAW
 
 	CreateDevice();
-	krnlmagic::ex.ArbitraryReadRoutine = ARRoutine;
-	krnlmagic::ex.ArbitraryWriteRoutine = AWRoutine;
-	krnlmagic::ex.Exploit();
+	aek::ex.ArbitraryReadRoutine = ARRoutine;
+	aek::ex.ArbitraryWriteRoutine = AWRoutine;
+	aek::ex.Exploit();
 
 #endif // ARAW
 
